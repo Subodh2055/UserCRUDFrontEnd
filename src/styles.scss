@@ -1,1 +1,21 @@
+@use 'themes' as *;
+
+@use '@nebular/theme/styles/globals' as *;
+
+@include nb-install() {
+  @include nb-theme-global();
+};
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+.form-control.ng-touched.ng-invalid {
+  border:1px solid #f50f0f;
+}
+.form-control.ng-touched.ng-valid {
+  border:1px solid #1a37ef;
+}

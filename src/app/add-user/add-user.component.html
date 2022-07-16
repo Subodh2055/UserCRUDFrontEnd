@@ -1,0 +1,43 @@
+<form [formGroup]="addForm"  >
+  <div class="row">
+    <div class="col-md-4">
+      <label for="name">Name</label>
+      <input class="form-control" formControlName="name" placeholder="name" id="name">
+      <div *ngIf="userFormControl.name.invalid && userFormControl.name.touched" class="text-danger">Name is Required</div>
+    </div>
+    <pre></pre>
+    <pre></pre>
+    <div class="col-md-4">
+      <label for="email">Email</label>
+      <input class="form-control" formControlName="email" placeholder="Email" id="email"  >
+      <div *ngIf="userFormControl.email.invalid && userFormControl.email.touched" class="text-danger">Email is Requird</div>
+    </div>
+    <pre></pre>
+    <div class="col-md-4">
+      <label for="phone">Phone</label>
+      <input class="form-control" type="number" formControlName="phone" placeholder="Phone" id="phone" >
+      <div *ngIf="userFormControl.phone.invalid && userFormControl.phone.touched" class="text-danger">Phone is Required</div>
+
+    </div>
+    <pre></pre>
+    <div class="col-md-4 mt-2">
+      <label for="address">Address</label>
+      <input class="form-control"  formControlName="address" placeholder="Address" id="address" >
+      <div *ngIf="userFormControl.address.invalid && userFormControl.address.touched" class="text-danger">Address is Required</div>
+
+    </div>
+    <pre></pre>
+    <div class="col-md-4 mt-3">
+      <label for="dob">Dob</label>
+      <input class="form-control"  formControlName="dob" placeholder="Dob" id="dob" >
+      <div *ngIf="userFormControl.dob.invalid && userFormControl.dob.touched" class="text-danger">DateOfBirth is Required</div>
+
+    </div>
+  </div>
+  <hr>
+  <div class="model-footer">
+    <button nbButton status="danger" (click)="backToUserList()">Cancel</button>
+    <button nbButton class="btn btn-primary" (click)="onSubmit()">Save</button>
+  </div>
+</form>
+

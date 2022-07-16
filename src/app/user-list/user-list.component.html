@@ -1,0 +1,46 @@
+<button (click)="navigateToAddUser()" nbButton status="info">Add User</button>
+<hr>
+<table  class="table table-hover table-info table-bordered" >
+  <thead>
+  <tr class="text-center">
+    <th>S.No.</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Address</th>
+    <th>Date Of Birth</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody class="text-center">
+  <tr *ngFor="let datas of user; let i= index ">
+    <td>{{i+1}}</td>
+    <td>{{datas.name}}</td>
+    <td>{{datas.email}}</td>
+    <td>{{datas.phone}}</td>
+    <td>{{datas.address}}</td>
+    <td>{{datas.dob}}</td>
+    <td>
+      <a class="btn btn-primary" routerLinkActive="active" routerLink="edit-user/{{datas.id}}" >Edit</a> |
+      <a class="btn btn-danger" (click)="open(content)">Delete</a>
+
+      <ng-template #content let-c="close" let-d="dismiss">
+        <div class="modal-header">
+          <h3 class="modal-title" id="modal-basic-title" ><strong>Delete</strong></h3>
+          <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div  class="modal-body ">
+          <h1 style="color:black">Are You Sure You want To delete?</h1>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" (click)="deleteUser(datas.id)">Delete</button>
+        </div>
+      </ng-template>
+    </td>
+  </tr>
+  </tbody>
+</table>
+

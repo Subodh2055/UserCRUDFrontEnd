@@ -1,0 +1,38 @@
+
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="col-md-6">
+      <label for="name">Name</label>
+      <input class="form-control" formControlName="name" placeholder="name" id="name">
+    </div>
+    <pre></pre>
+    <div class="col-md-6">
+      <label for="email">Email</label>
+      <input class="form-control" formControlName="email" placeholder="Email" id="email" >
+    </div>
+    <pre></pre>
+    <div class="col-md-6">
+      <label for="phone">Phone</label>
+      <input class="form-control" type="number" formControlName="phone" placeholder="Phone" id="phone" >
+    </div>
+    <pre></pre>
+    <div class="col-md-6">
+      <label for="address">Address</label>
+      <input class="form-control"  formControlName="address" placeholder="Address" id="address" >
+
+    </div>
+    <pre></pre>
+    <div class="col-md-6">
+      <label for="dob">Dob</label>
+      <input class="form-control"  formControlName="dob" placeholder="Dob" id="dob" >
+    </div>
+  </div>
+  <hr>
+
+<div class="model-footer">
+  <button nbButton status="danger" (click)="backToUserList()">Cancel</button>
+  <button nbButton class="btn btn-primary" (click)="updateUser()">Save</button>
+</div>
+
+</form>
+
